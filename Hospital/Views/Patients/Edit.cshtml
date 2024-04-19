@@ -1,0 +1,74 @@
+﻿@model Hospital.Models.Patients
+
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white-50">Patient Details</h2>
+                </hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div asp-validation-summary="All"></div>@*commenting*@
+<div class="card-body p-4">
+    <form method="post">
+        <input asp-for="Id" hidden />
+
+        @*<div asp-validation-summary="All"></div>@*commenting*@
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="Name" class="p-0"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="Problem" class="p-0"></label>
+            <input asp-for="Problem" class="form-control" />
+            <span asp-validation-for="Problem" class="text-danger"></span>
+        </div>
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="Age" class="p-0"></label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="BloodGroup" class="p-0"></label>
+            <input asp-for="BloodGroup" class="form-control" />
+            <span asp-validation-for="BloodGroup" class="text-danger"></span>
+        </div>
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="PhoneNumber" class="p-0"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="City" class="p-0"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="bg-gradient mb-3 row p-1">
+            <label asp-for="Record" class="p-0"></label>
+            <input type="file" class="form-control" />
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-outline-primary border form-control">Edit Details</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Patients" asp-action="Index" class="btn btn-outline-primary border form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+
+
